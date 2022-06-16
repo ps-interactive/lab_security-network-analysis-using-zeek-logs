@@ -13,14 +13,14 @@ redef digest_salt = "Please change this value.";
 @load tuning/defaults
 
 # Estimate and log capture loss.
-@load misc/capture-loss
+#@load misc/capture-loss
 
 # Enable logging of memory, packet and lag statistics.
 @load misc/stats
 
 # Load the scan detection script.  It's disabled by default because
 # it often causes performance issues.
-@load misc/scan
+#@load misc/scan
 
 # Detect traceroute being run on the network. This could possibly cause
 # performance trouble when there are a lot of traceroutes on your network.
@@ -37,12 +37,12 @@ redef digest_salt = "Please change this value.";
 @load frameworks/software/version-changes
 
 # This adds signatures to detect cleartext forward and reverse windows shells.
-#@load-sigs frameworks/signatures/detect-windows-shells
+@load-sigs frameworks/signatures/detect-windows-shells
 
 # Load all of the scripts that detect software in various protocols.
 @load protocols/ftp/software
-#@load protocols/smtp/software
-#@load protocols/ssh/software
+@load protocols/smtp/software
+@load protocols/ssh/software
 @load protocols/http/software
 # The detect-webapps script could possibly cause performance trouble when
 # running on live traffic.  Enable it cautiously.
@@ -62,10 +62,14 @@ redef digest_salt = "Please change this value.";
 @load protocols/ssl/known-certs
 
 # This script enables SSL/TLS certificate validation.
-#@load protocols/ssl/validate-certs
+@load protocols/ssl/validate-certs
 
 # This script prevents the logging of SSL CA certificates in x509.log
 @load protocols/ssl/log-hostcerts-only
+
+# Uncomment the following line to check each SSL certificate hash against the ICSI
+# certificate notary service; see http://notary.icsi.berkeley.edu .
+# @load protocols/ssl/notary
 
 # If you have GeoIP support built in, do some geographic detections and
 # logging for SSH traffic.
@@ -95,14 +99,25 @@ redef digest_salt = "Please change this value.";
 
 # Uncomment the following line to enable logging of connection VLANs. Enabling
 # this adds two VLAN fields to the conn.log file.
- @load policy/protocols/conn/vlan-logging
+# @load policy/protocols/conn/vlan-logging
 
 # Uncomment the following line to enable logging of link-layer addresses. Enabling
 # this adds the link-layer address for each connection endpoint to the conn.log file.
- @load policy/protocols/conn/mac-logging
+# @load policy/protocols/conn/mac-logging
 
 # Uncomment this to source zkg's package state
- @load packages
+# @load packages
 
-### Globomantics Customizations ###
-@load tuning/json-logs.zeek 
+#Globomantics Custom Loads
+redef Site::local_nets += {192.168.30.0/23};
+
+# Lab 2 Enabling JSON Logging Format
+#@load policy/tuning/json-logs
+
+# Lab 3 Enabling File Extraction - All Files
+#@load policy/frameworks/files/extract-all-files.zeek
+
+# Lab 4 Enabling Intel Framework Scripts and Loading Custom Intel File
+#redef Intel::read_files += {"/home/globolab/labs/lab4_intel.dat"};
+#@load frameworks/intel/seen
+#@load frameworks/intel/do_notice
