@@ -17,4 +17,3 @@ COPY [--chown=globolab:globolab] ./intel.dat /home/globolab/labs/lab4/intel.dat
 COPY [--chown=globolab:globolab] ./local.zeek /home/globolab/labs/local.zeek
 
 RUN /bin/bash -c 'chown -R globolab:globolab /home/globolab/labs'
-RUN /bin/bash -c 'http_proxy=http://tstark:pssecrocks@172.31.245.222:8888 apt install -y nano'
