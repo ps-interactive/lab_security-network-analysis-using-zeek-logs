@@ -111,10 +111,8 @@ redef digest_salt = "Please change this value.";
 #Globomantics Custom Loads
 redef Site::local_nets += {192.168.30.0/23};
 
-# Lab 2 Enabling JSON Logging Format
+# Lab 3 Enabling JSON Log Format and File Extraction - All Files
 #@load policy/tuning/json-logs
-
-# Lab 3 Enabling File Extraction - All Files
 #@load policy/frameworks/files/extract-all-files.zeek
 
 # Lab 4 Enabling Intel Framework Scripts and Loading Custom Intel File
