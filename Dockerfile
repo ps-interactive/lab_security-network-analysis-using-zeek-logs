@@ -15,7 +15,7 @@ COPY [--chown=globolab:globolab] ./lab2.pcap /home/globolab/labs/lab2/lab2.pcap
 COPY [--chown=globolab:globolab] ./lab3.pcap /home/globolab/labs/lab3/lab3.pcap
 COPY [--chown=globolab:globolab] ./intel.dat /home/globolab/labs/lab4/intel.dat
 COPY [--chown=globolab:globolab] ./local.zeek /home/globolab/labs/local.zeek
-COPY [--chown=globolab:globolab] ./startup.sh /etc/inid.d/startup.sh
+COPY [--chown=globolab:globolab] ./startup.sh /etc/init.d/startup.sh
 
 RUN /bin/bash -c 'chown -R globolab:globolab /home/globolab/labs'
-#RUN /bin/bash -c 'chmod +x /etc/init.d/startup.sh'
+RUN /bin/bash -c 'chmod +x /etc/init.d/startup.sh'
