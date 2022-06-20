@@ -116,6 +116,6 @@ redef Site::local_nets += {192.168.30.0/23};
 #@load policy/frameworks/files/extract-all-files.zeek
 
 # Lab 4 Enabling Intel Framework Scripts and Loading Custom Intel File
-#redef Intel::read_files += {"/home/globolab/labs/lab4_intel.dat"};
+#redef Intel::read_files += {"/home/globolab/labs/lab4/intel.dat"};
 #@load frameworks/intel/seen
 #@load frameworks/intel/do_notice
