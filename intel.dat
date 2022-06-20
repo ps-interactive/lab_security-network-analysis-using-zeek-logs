@@ -1,3 +1,3 @@
-#fields	indicator	indicator_type	meta.source\
-awesome-site.eastus2.cloudapp.azure.com	Intel::DOMAIN	globo_domain_intel\
-11aa460633867a1dde0c67f777cc6bf5	Intel::FILE_HASH	globo_file_intel}
+#fields	indicator	indicator_type	meta.source
+awesome-site.eastus2.cloudapp.azure.com	Intel::DOMAIN	globo_domain_intel
+11aa460633867a1dde0c67f777cc6bf5	Intel::FILE_HASH	globo_file_intel
