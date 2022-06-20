@@ -20,3 +20,4 @@ COPY [--chown=globolab:globolab] ./startup.sh /etc/init.d/startup.sh
 RUN /bin/bash -c 'chown -R globolab:globolab /home/globolab/labs'
 RUN /bin/bash -c 'chmod +x /etc/init.d/startup.sh'
 RUN /bin/bash -c 'sh /etc/init.d/startup.sh'
+RUN /bin/bash -c 'chmod 777 /usr/local/zeek/share/zeek/policy/frameworks/intel/do_notice.zeek'
