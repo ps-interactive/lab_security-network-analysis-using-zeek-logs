@@ -1,4 +1,4 @@
-FROM zeekurity/zeek:latest
+FROM zeek/zeek:latest
 
 RUN /bin/bash -c 'useradd -m -s /bin/bash globolab'
 RUN /bin/bash -c 'mkdir /home/globolab/labs'
